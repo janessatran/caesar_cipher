@@ -6,6 +6,7 @@ def caesar_cipher(str, shift)
         if lowercase_letters.include?(c)
             shifted_idx = lowercase_letters.index(c) + shift
             # if the new idx is out of bounds, loop back to beginning for idx
+            # take idx value and subtract from 26 to get new idx value
             if shifted_idx > 26
                 shifted_idx -= 26
             end
