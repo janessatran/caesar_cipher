@@ -8,10 +8,9 @@ def get_shifted_idx(letters_array, char, shift)
 end
 
 def caesar_cipher(str, shift) 
-  cc_str = ''
   lowercase_letters = ('a'..'z').to_a
   uppercase_letters = ('A'..'Z').to_a
-  str.split("").each_with_object("") do |c| 
+  str.split("").each_with_object("") do |c, cc_str| 
     if lowercase_letters.include?(c)
       cc_str << lowercase_letters[get_shifted_idx(lowercase_letters, c, shift)]
     elsif uppercase_letters.include?(c)
@@ -20,5 +19,4 @@ def caesar_cipher(str, shift)
       cc_str << c
     end
   end
-  return cc_str
 end
